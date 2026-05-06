@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { RouterLink } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -15,7 +15,6 @@ import { AuthService } from '../../../core/services/auth.service';
   imports: [
     CommonModule,
     RouterLink,
-    RouterLinkActive,
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
@@ -24,13 +23,13 @@ import { AuthService } from '../../../core/services/auth.service';
     FormsModule,
   ],
   template: `
-    <mat-toolbar color="primary" class="navbar">
+    <mat-toolbar class="navbar glass-header">
       <a routerLink="/" class="logo">NutriPrecio</a>
       
       <span class="spacer"></span>
       
       <div class="search-bar">
-        <mat-form-field appearance="outline">
+        <mat-form-field appearance="outline" class="modern-search" subscriptSizing="dynamic">
           <input matInput placeholder="Buscar productos..." [(ngModel)]="searchQuery" (keyup.enter)="onSearch()">
           <mat-icon matSuffix>search</mat-icon>
         </mat-form-field>
@@ -39,15 +38,15 @@ import { AuthService } from '../../../core/services/auth.service';
       <span class="spacer"></span>
       
       <nav class="nav-links">
-        <a mat-button routerLink="/stores">Tiendas</a>
-        <a mat-button routerLink="/compare">Comparar</a>
+        <a mat-button routerLink="/stores" class="nav-btn">Tiendas</a>
+        <a mat-button routerLink="/compare" class="nav-btn">Comparar</a>
         @if (authService.isLoggedIn()) {
-          <a mat-button routerLink="/dashboard">Panel</a>
-          <a mat-button routerLink="/favorites">Favoritos</a>
-          <button mat-button (click)="logout()">Cerrar sesión</button>
+          <a mat-button routerLink="/dashboard" class="nav-btn">Panel</a>
+          <a mat-button routerLink="/favorites" class="nav-btn">Favoritos</a>
+          <button mat-button (click)="logout()" class="nav-btn">Cerrar sesión</button>
         } @else {
-          <a mat-button routerLink="/login">Iniciar sesión</a>
-          <a mat-button routerLink="/register">Registrarse</a>
+          <a mat-button routerLink="/login" class="nav-btn">Iniciar sesión</a>
+          <button mat-flat-button color="primary" routerLink="/register" class="nav-btn-primary">Registrarse</button>
         }
       </nav>
     </mat-toolbar>
@@ -57,28 +56,81 @@ import { AuthService } from '../../../core/services/auth.service';
       position: sticky;
       top: 0;
       z-index: 1000;
+      height: 76px;
+      padding: 0 40px;
+    }
+    .glass-header {
+      background: rgba(254, 250, 224, 0.82);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0 4px 24px rgba(40, 54, 24, 0.06);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.4);
     }
     .logo {
-      color: white;
+      font-family: var(--font-display, 'DM Serif Display', serif);
+      color: var(--color-espresso, #283618);
       text-decoration: none;
-      font-size: 1.5rem;
-      font-weight: bold;
+      font-size: 2.25rem;
+      font-weight: 400;
+      letter-spacing: -0.02em;
     }
     .spacer {
       flex: 1 1 auto;
     }
     .search-bar {
-      margin: 0 20px;
+      flex: 1;
+      max-width: 480px;
+      margin: 0 24px;
     }
-    .search-bar mat-form-field {
-      width: 300px;
+    ::ng-deep .modern-search {
+      width: 100%;
+    }
+    ::ng-deep .modern-search .mdc-text-field--outlined {
+      border-radius: 28px !important;
+      background: #ffffff;
+      box-shadow: 0 2px 8px rgba(40, 54, 24, 0.04);
+    }
+    ::ng-deep .modern-search .mdc-notched-outline__leading,
+    ::ng-deep .modern-search .mdc-notched-outline__notch,
+    ::ng-deep .modern-search .mdc-notched-outline__trailing {
+      border-color: rgba(40, 54, 24, 0.1) !important;
+      border-width: 1px !important;
+    }
+    ::ng-deep .modern-search .mdc-text-field--focused .mdc-notched-outline__leading,
+    ::ng-deep .modern-search .mdc-text-field--focused .mdc-notched-outline__notch,
+    ::ng-deep .modern-search .mdc-text-field--focused .mdc-notched-outline__trailing {
+      border-color: var(--color-amber, #606C38) !important;
+      border-width: 2px !important;
+    }
+    ::ng-deep .modern-search .mat-mdc-form-field-icon-suffix {
+      color: var(--color-amber, #606C38);
     }
     .nav-links {
       display: flex;
       gap: 8px;
+      align-items: center;
     }
-    .nav-links a, .nav-links button {
-      color: white;
+    .nav-btn {
+      font-family: var(--font-body, 'DM Sans', sans-serif);
+      color: var(--color-espresso, #283618);
+      border-radius: 20px;
+      padding: 0 16px;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+    .nav-btn:hover {
+      background: rgba(96, 108, 56, 0.08);
+      color: var(--color-amber, #606C38);
+    }
+    .nav-btn-primary {
+      font-family: var(--font-body, 'DM Sans', sans-serif);
+      border-radius: 20px;
+      padding: 0 24px;
+      font-weight: 600;
+      background-color: var(--color-espresso, #283618);
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(40, 54, 24, 0.15);
+      margin-left: 8px;
     }
   `]
 })

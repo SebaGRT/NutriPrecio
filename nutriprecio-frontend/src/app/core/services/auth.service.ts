@@ -53,7 +53,14 @@ export class AuthService {
 
   getUser(): User | null {
     const userStr = localStorage.getItem(this.userKey);
-    return userStr ? JSON.parse(userStr) : null;
+    if (!userStr) return null;
+    try {
+      return JSON.parse(userStr);
+    } catch (e) {
+      console.error('Failed to parse user from local storage:', e);
+      localStorage.removeItem(this.userKey);
+      return null;
+    }
   }
 
   isLoggedIn(): boolean {

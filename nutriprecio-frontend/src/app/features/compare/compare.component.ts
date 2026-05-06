@@ -1,6 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
@@ -15,7 +14,6 @@ import { ProductService, Product } from '../../core/services/product.service';
   standalone: true,
   imports: [
     CommonModule,
-    RouterLink,
     FormsModule,
     MatCardModule,
     MatInputModule,

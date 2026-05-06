@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, inject, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
@@ -23,7 +23,7 @@ import { AuthService, User } from '../../core/services/auth.service';
         <div class="hero-content">
           <div class="accent-line"></div>
           <h1 class="hero-title">
-            {{ user?.first_name ? '¡Bienvenido, ' + user?.first_name + '!' : '¡Bienvenido!' }}
+            {{ (user?.first_name || user?.username) ? '¡Bienvenido, ' + (user?.first_name || user?.username) + '!' : '¡Bienvenido!' }}
           </h1>
           <p class="hero-subtitle">
             {{ user?.is_seller ? 'Este es tu panel de vendedor. Gestiona tu tienda, productos y revisa tu rendimiento.' : 'Este es tu panel de control. Explora productos y gestiona tu perfil.' }}
@@ -53,13 +53,13 @@ import { AuthService, User } from '../../core/services/auth.service';
                 <div class="detail-row">
                   <mat-icon class="detail-icon" aria-hidden="true">email</mat-icon>
                   <span class="detail-label">Correo</span>
-                  <span class="detail-value">{{ user?.email }}</span>
+                  <span class="detail-value">{{ user?.email || 'No registrado' }}</span>
                 </div>
                 <div class="detail-row">
                   <mat-icon class="detail-icon" aria-hidden="true">badge</mat-icon>
                   <span class="detail-label">Nombre</span>
                   <span class="detail-value">
-                    {{ user?.first_name && user?.last_name ? user?.first_name + ' ' + user?.last_name : '—' }}
+                    {{ (user?.first_name || '') + (user?.first_name && user?.last_name ? ' ' : '') + (user?.last_name || '') || user?.username || '—' }}
                   </span>
                 </div>
               </div>
@@ -159,10 +159,13 @@ import { AuthService, User } from '../../core/services/auth.service';
 export class DashboardComponent implements OnInit {
   private authService = inject(AuthService);
 
+  private cdr = inject(ChangeDetectorRef);
+
   user: User | null = null;
 
   ngOnInit() {
     this.user = this.authService.getUser();
+    this.cdr.markForCheck();
   }
 
   getInitials(): string {
@@ -175,6 +178,12 @@ export class DashboardComponent implements OnInit {
     if (first) {
       return first[0].toUpperCase();
     }
-    return this.user.username[0].toUpperCase();
+    if (this.user.username && this.user.username.length > 0) {
+      return this.user.username[0].toUpperCase();
+    }
+    if (this.user.email && this.user.email.length > 0) {
+      return this.user.email[0].toUpperCase();
+    }
+    return '?';
   }
 }
