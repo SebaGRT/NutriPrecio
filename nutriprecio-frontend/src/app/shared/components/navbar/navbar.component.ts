@@ -42,6 +42,7 @@ import { AuthService } from '../../../core/services/auth.service';
         <a mat-button routerLink="/stores">Tiendas</a>
         <a mat-button routerLink="/compare">Comparar</a>
         @if (authService.isLoggedIn()) {
+          <a mat-button routerLink="/dashboard">Panel</a>
           <a mat-button routerLink="/favorites">Favoritos</a>
           <button mat-button (click)="logout()">Cerrar sesión</button>
         } @else {

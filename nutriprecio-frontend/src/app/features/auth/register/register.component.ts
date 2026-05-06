@@ -6,6 +6,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { AuthService } from '../../../core/services/auth.service';
 
 @Component({
@@ -19,6 +20,7 @@ import { AuthService } from '../../../core/services/auth.service';
     MatInputModule,
     MatFormFieldModule,
     MatButtonModule,
+    MatCheckboxModule,
   ],
   template: `
     <div class="register-container">
@@ -53,6 +55,12 @@ import { AuthService } from '../../../core/services/auth.service';
               <mat-label>Contraseña</mat-label>
               <input matInput type="password" [(ngModel)]="password" name="password" required>
             </mat-form-field>
+
+            <div class="seller-checkbox">
+              <mat-checkbox [(ngModel)]="isSeller" name="isSeller" color="primary">
+                Quiero ser vendedor
+              </mat-checkbox>
+            </div>
 
             @if (errorMessage) {
               <p class="error-message">{{ errorMessage }}</p>
@@ -105,6 +113,11 @@ import { AuthService } from '../../../core/services/auth.service';
       color: #009688;
       text-decoration: none;
     }
+    .seller-checkbox {
+      margin: 8px 0 16px;
+      display: flex;
+      justify-content: center;
+    }
   `]
 })
 export class RegisterComponent {
@@ -116,6 +129,7 @@ export class RegisterComponent {
   firstName = '';
   lastName = '';
   password = '';
+  isSeller = false;
   errorMessage = '';
 
   onSubmit() {
@@ -126,6 +140,7 @@ export class RegisterComponent {
       password: this.password,
       first_name: this.firstName,
       last_name: this.lastName,
+      is_seller: this.isSeller,
     }).subscribe({
       next: () => {
         this.router.navigate(['/']);

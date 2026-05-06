@@ -8,6 +8,7 @@ export interface User {
   email: string;
   first_name: string;
   last_name: string;
+  is_seller: boolean;
 }
 
 export interface AuthResponse {
@@ -32,7 +33,7 @@ export class AuthService {
     );
   }
 
-  register(data: { username: string; email: string; password: string; first_name?: string; last_name?: string }) {
+  register(data: { username: string; email: string; password: string; first_name?: string; last_name?: string; is_seller?: boolean }) {
     return this.api.post<AuthResponse>('/users/register/', data).pipe(
       tap(response => {
         this.setToken(response.token);
