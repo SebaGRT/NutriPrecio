@@ -1,0 +1,6 @@
+[PASS] Step 1: Register seller: Redirected to home, token stored: yes
+[PASS] Step 2: Login seller: Token stored, URL: http://localhost:4200/
+[PASS] Step 3: Dashboard welcome: Welcome message with username found
+[PASS] Step 3: Dashboard seller chip: Vendedor chip visible
+[PASS] Step 4: Register store: Redirected to dashboard after submit
+[FAIL] Step 5: Store appears on dashboard: Store name not found on dashboard

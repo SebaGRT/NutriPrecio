@@ -1,0 +1,67 @@
+{
+  "active_plan": "/home/sebacc/Documents/UDD/Agil/NutriPrecio/.sisyphus/plans/sprint-presentacion.md",
+  "started_at": "2026-05-11T03:11:10.419Z",
+  "session_ids": [
+    "ses_1ebe12847ffeluMd82TWCy1klg",
+    "ses_1eac70f8bffexrLa9GRg1UT0iV",
+    "ses_1eac70f8affdkxVg0byUqMVqpw",
+    "ses_1eac70ea0ffeh6atZEXBVArkOu",
+    "ses_1eac70e9fffelV3WZyCr2jyGDz"
+  ],
+  "plan_name": "sprint-presentacion",
+  "worktree_path": null,
+  "session_origins": {
+    "ses_1ebe12847ffeluMd82TWCy1klg": "direct",
+    "ses_1eac70f8bffexrLa9GRg1UT0iV": "appended",
+    "ses_1eac70f8affdkxVg0byUqMVqpw": "appended",
+    "ses_1eac70ea0ffeh6atZEXBVArkOu": "appended",
+    "ses_1eac70e9fffelV3WZyCr2jyGDz": "appended"
+  },
+  "task_sessions": {
+    "todo:1": {
+      "task_key": "todo:1",
+      "task_label": "1",
+      "task_title": "Add `owner` field to Store model + migration",
+      "session_id": "ses_1eaf92298ffeS7hFxyo7PiXlU1",
+      "agent": "Sisyphus-Junior",
+      "category": "quick",
+      "updated_at": "2026-05-11T03:14:34.298Z"
+    },
+    "todo:2": {
+      "task_key": "todo:2",
+      "task_label": "2",
+      "task_title": "Update Store serializer and viewset for owner linking",
+      "session_id": "ses_1eaf0bd20ffe0AOBQ156cbhv3U",
+      "agent": "Sisyphus-Junior",
+      "category": "quick",
+      "updated_at": "2026-05-11T03:24:21.650Z"
+    },
+    "todo:5": {
+      "task_key": "todo:5",
+      "task_label": "5",
+      "task_title": "Create seed data fixtures",
+      "session_id": "ses_1eaed207dffeCzQ8OjmfFULBLn",
+      "agent": "Sisyphus-Junior",
+      "category": "quick",
+      "updated_at": "2026-05-11T03:29:16.498Z"
+    },
+    "todo:9": {
+      "task_key": "todo:9",
+      "task_label": "9",
+      "task_title": "Create Use Case diagram (following example format)",
+      "session_id": "ses_1eae8c29cffejaTcZ10xdocN5d",
+      "agent": "Sisyphus-Junior",
+      "category": "unspecified-high",
+      "updated_at": "2026-05-11T03:53:33.686Z"
+    },
+    "todo:12": {
+      "task_key": "todo:12",
+      "task_label": "12",
+      "task_title": "Create PowerPoint presentation (8 minutes)",
+      "session_id": "ses_1ead21993ffet5AjilXfKFA4Xo",
+      "agent": "Sisyphus-Junior",
+      "category": "unspecified-high",
+      "updated_at": "2026-05-11T03:59:22.832Z"
+    }
+  }
+}

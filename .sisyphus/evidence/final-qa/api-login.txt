@@ -1,0 +1,14 @@
+=== API: Login as vendedor ===
+{
+    "token": "4d1447a81a31425e2d574bcf160f5c9f404c0f2b",
+    "user": {
+        "id": 1,
+        "username": "vendedor",
+        "email": "vendedor@test.cl",
+        "first_name": "",
+        "last_name": "",
+        "is_seller": true,
+        "created_at": "2026-05-10T23:28:21.423252-04:00",
+        "updated_at": "2026-05-11T00:08:59.779017-04:00"
+    }
+}

@@ -1,0 +1,41 @@
+=== API: Verify demo store created ===
+{
+    "count": 3,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "id": 3,
+            "name": "L\u00e1cteos del Sur",
+            "slug": "lacteos-del-sur",
+            "logo": null,
+            "website": "",
+            "is_active": true,
+            "owner": 1,
+            "created_at": "2026-05-10T23:28:21.908043-04:00",
+            "updated_at": "2026-05-10T23:28:21.908054-04:00"
+        },
+        {
+            "id": 1,
+            "name": "Supermercado Saludable",
+            "slug": "supermercado-saludable",
+            "logo": null,
+            "website": "",
+            "is_active": true,
+            "owner": 1,
+            "created_at": "2026-05-10T23:28:21.849266-04:00",
+            "updated_at": "2026-05-10T23:28:21.849279-04:00"
+        },
+        {
+            "id": 2,
+            "name": "Verduler\u00eda Don Pepe",
+            "slug": "verduleria-don-pepe",
+            "logo": null,
+            "website": "",
+            "is_active": true,
+            "owner": 1,
+            "created_at": "2026-05-10T23:28:21.878379-04:00",
+            "updated_at": "2026-05-10T23:28:21.878391-04:00"
+        }
+    ]
+}

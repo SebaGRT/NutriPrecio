@@ -1,0 +1,212 @@
+=== API: List products ===
+{
+    "count": 10,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "id": 7,
+            "name": "Cebolla",
+            "slug": "cebolla",
+            "brand": "",
+            "category": 2,
+            "category_name": "Verduras",
+            "unit": "kg",
+            "image": null,
+            "description": "",
+            "barcode": "",
+            "latest_price": {
+                "price": 690.0,
+                "original_price": null,
+                "discount_percentage": 0.0,
+                "store": "Verduler\u00eda Don Pepe",
+                "in_stock": true
+            },
+            "created_at": "2026-05-10T23:28:22.137287-04:00",
+            "updated_at": "2026-05-10T23:28:22.137299-04:00"
+        },
+        {
+            "id": 9,
+            "name": "Leche Entera",
+            "slug": "leche-entera",
+            "brand": "",
+            "category": 3,
+            "category_name": "L\u00e1cteos",
+            "unit": "L",
+            "image": null,
+            "description": "",
+            "barcode": "",
+            "latest_price": {
+                "price": 1090.0,
+                "original_price": 1290.0,
+                "discount_percentage": 15.0,
+                "store": "L\u00e1cteos del Sur",
+                "in_stock": true
+            },
+            "created_at": "2026-05-10T23:28:22.195472-04:00",
+            "updated_at": "2026-05-10T23:28:22.195484-04:00"
+        },
+        {
+            "id": 6,
+            "name": "Lechuga Costina",
+            "slug": "lechuga-costina",
+            "brand": "",
+            "category": 2,
+            "category_name": "Verduras",
+            "unit": "unit",
+            "image": null,
+            "description": "",
+            "barcode": "",
+            "latest_price": {
+                "price": 790.0,
+                "original_price": null,
+                "discount_percentage": 0.0,
+                "store": "Verduler\u00eda Don Pepe",
+                "in_stock": true
+            },
+            "created_at": "2026-05-10T23:28:22.102852-04:00",
+            "updated_at": "2026-05-10T23:28:22.102864-04:00"
+        },
+        {
+            "id": 1,
+            "name": "Manzana Fuji",
+            "slug": "manzana-fuji",
+            "brand": "",
+            "category": 1,
+            "category_name": "Frutas",
+            "unit": "kg",
+            "image": null,
+            "description": "",
+            "barcode": "",
+            "latest_price": {
+                "price": 1790.0,
+                "original_price": null,
+                "discount_percentage": 0.0,
+                "store": "L\u00e1cteos del Sur",
+                "in_stock": true
+            },
+            "created_at": "2026-05-10T23:28:21.940969-04:00",
+            "updated_at": "2026-05-10T23:28:21.940981-04:00"
+        },
+        {
+            "id": 3,
+            "name": "Naranja",
+            "slug": "naranja",
+            "brand": "",
+            "category": 1,
+            "category_name": "Frutas",
+            "unit": "kg",
+            "image": null,
+            "description": "",
+            "barcode": "",
+            "latest_price": {
+                "price": 890.0,
+                "original_price": null,
+                "discount_percentage": 0.0,
+                "store": "Verduler\u00eda Don Pepe",
+                "in_stock": true
+            },
+            "created_at": "2026-05-10T23:28:22.005848-04:00",
+            "updated_at": "2026-05-10T23:28:22.005859-04:00"
+        },
+        {
+            "id": 4,
+            "name": "Palta Hass",
+            "slug": "palta-hass",
+            "brand": "",
+            "category": 1,
+            "category_name": "Frutas",
+            "unit": "unit",
+            "image": null,
+            "description": "",
+            "barcode": "",
+            "latest_price": {
+                "price": 1590.0,
+                "original_price": null,
+                "discount_percentage": 0.0,
+                "store": "Supermercado Saludable",
+                "in_stock": true
+            },
+            "created_at": "2026-05-10T23:28:22.033705-04:00",
+            "updated_at": "2026-05-10T23:28:22.033717-04:00"
+        },
+        {
+            "id": 2,
+            "name": "Pl\u00e1tano",
+            "slug": "platano",
+            "brand": "",
+            "category": 1,
+            "category_name": "Frutas",
+            "unit": "kg",
+            "image": null,
+            "description": "",
+            "barcode": "",
+            "latest_price": {
+                "price": 1190.0,
+                "original_price": null,
+                "discount_percentage": 0.0,
+                "store": "Verduler\u00eda Don Pepe",
+                "in_stock": true
+            },
+            "created_at": "2026-05-10T23:28:21.975413-04:00",
+            "updated_at": "2026-05-10T23:28:21.975425-04:00"
+        },
+        {
+            "id": 10,
+            "name": "Queso Gauda",
+            "slug": "queso-gauda",
+            "brand": "",
+            "category": 3,
+            "category_name": "L\u00e1cteos",
+            "unit": "kg",
+            "image": null,
+            "description": "",
+            "barcode": "",
+            "latest_price": {
+                "price": 4990.0,
+                "original_price": null,
+                "discount_percentage": 0.0,
+                "store": "L\u00e1cteos del Sur",
+                "in_stock": true
+            },
+            "created_at": "2026-05-10T23:28:22.229866-04:00",
+            "updated_at": "2026-05-10T23:28:22.229878-04:00"
+        },
+        {
+            "id": 5,
+            "name": "Tomate Limachino",
+            "slug": "tomate-limachino",
+            "brand": "",
+            "category": 2,
+            "category_name": "Verduras",
+            "unit": "kg",
+            "image": null,
+            "description": "",
+            "barcode": "",
+            "latest_price": {
+                "price": 1390.0,
+                "original_price": null,
+                "discount_percentage": 0.0,
+                "store": "Verduler\u00eda Don Pepe",
+                "in_stock": true
+            },
+            "created_at": "2026-05-10T23:28:22.066885-04:00",
+            "updated_at": "2026-05-10T23:28:22.066898-04:00"
+        },
+        {
+            "id": 8,
+            "name": "Zanahoria",
+            "slug": "zanahoria",
+            "brand": "",
+            "category": 2,
+            "category_name": "Verduras",
+            "unit": "kg",
+            "image": null,
+            "description": "",
+            "barcode": "",
+            "latest_price": null,
+            "created_at": "2026-05-10T23:28:22.167757-04:00",
+            "updated_at": "2026-05-10T23:28:22.167768-04:00"
+        }
+    ]
+}
