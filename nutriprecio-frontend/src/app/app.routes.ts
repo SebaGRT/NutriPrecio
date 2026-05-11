@@ -12,6 +12,11 @@ export const routes: Routes = [
     canActivate: [authGuard],
   },
   {
+    path: 'dashboard/store-form',
+    loadComponent: () => import('./features/dashboard/store-form/store-form.component').then(m => m.StoreFormComponent),
+    canActivate: [authGuard],
+  },
+  {
     path: 'search',
     loadComponent: () => import('./features/search/search.component').then(m => m.SearchComponent),
   },

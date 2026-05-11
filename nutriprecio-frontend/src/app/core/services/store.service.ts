@@ -1,5 +1,7 @@
 import { Injectable, inject } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { ApiService } from './api.service';
+import { environment } from '../../../environments/environment';
 
 export interface Store {
   id: number;
@@ -22,6 +24,8 @@ export interface StoreListResponse {
 })
 export class StoreService {
   private api = inject(ApiService);
+  private http = inject(HttpClient);
+  private baseUrl = environment.apiUrl;
 
   getStores() {
     return this.api.get<StoreListResponse>('/stores/');
@@ -29,5 +33,17 @@ export class StoreService {
 
   getStore(slug: string) {
     return this.api.get<Store>(`/stores/${slug}/`);
+  }
+
+  createStore(data: { name: string; logo?: File; website?: string }) {
+    const formData = new FormData();
+    formData.append('name', data.name);
+    if (data.logo) {
+      formData.append('logo', data.logo);
+    }
+    if (data.website) {
+      formData.append('website', data.website);
+    }
+    return this.http.post(`${this.baseUrl}/stores/`, formData);
   }
 }

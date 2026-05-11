@@ -1,5 +1,6 @@
 import { Component, inject, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -126,9 +127,9 @@ import { AuthService, User } from '../../core/services/auth.service';
                 <p class="action-desc">Administra tu catálogo de productos</p>
               </mat-card-content>
               <div class="action-overlay">
-                <button mat-raised-button color="primary" disabled aria-label="Gestionar productos - Disponible próximamente">
-                  <mat-icon>lock</mat-icon>
-                  Próximamente
+                <button mat-raised-button color="primary" (click)="goToStoreForm()" aria-label="Registrar tienda">
+                  <mat-icon>store</mat-icon>
+                  Registrar Tienda
                 </button>
               </div>
             </mat-card>
@@ -158,6 +159,7 @@ import { AuthService, User } from '../../core/services/auth.service';
 })
 export class DashboardComponent implements OnInit {
   private authService = inject(AuthService);
+  private router = inject(Router);
 
   private cdr = inject(ChangeDetectorRef);
 
@@ -166,6 +168,10 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
     this.user = this.authService.getUser();
     this.cdr.markForCheck();
+  }
+
+  goToStoreForm() {
+    this.router.navigate(['/dashboard/store-form']);
   }
 
   getInitials(): string {
