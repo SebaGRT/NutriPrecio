@@ -7,6 +7,7 @@ class Store(models.Model):
     logo = models.ImageField(upload_to='stores/logos/', blank=True, null=True)
     website = models.URLField(blank=True)
     is_active = models.BooleanField(default=True)
+    owner = models.ForeignKey('users.User', on_delete=models.CASCADE, related_name='store', null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
